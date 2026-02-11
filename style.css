@@ -213,7 +213,10 @@ body {
     height: 100px;
     margin-top: 0;
 }
-
+.footer .logo img {
+    filter: brightness(0) invert(1);
+    align-items: left;
+}
 .footer p{
   font-size: 0.5em;
   margin-top: -2px;
