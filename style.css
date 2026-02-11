@@ -1,0 +1,224 @@
+/* =========================
+   ROOT VARIABLES (MATCH PROFILE)
+========================= */
+:root {
+    /* Colors */
+    --primary-accent: #ff3366;      /* Same accent as profile */
+    --background-body: #fafafa;     /* Light neutral background */
+    --background-card: #ffffff;     /* Card white */
+    --text-dark: #1a1a1a;           /* Near-black */
+    --text-light: #ffffff;
+
+    /* Typography */
+    --font-family: 'Segoe UI', Arial, sans-serif;
+
+    /* UI */
+    --border-radius: 16px;
+    --shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    color: var(--text-dark);
+    background-color: var(--background-body);
+    line-height: 1.6;
+
+    /* Better font rendering (same feel as profile) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* HEADER */
+.header {
+    background-color: var(--background-card);
+    color: var(--text-dark);
+    padding: 10px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height:60px;
+}
+
+.logo img {
+    height: 80px;
+    margin-bottom: 0;
+    /* HACK: Use a subtle shadow to make the lines appear thicker */
+    filter: drop-shadow(0 0.5px #333333);
+}
+
+/* MENU TOGGLE (MOBILE) */
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 5px 10px;
+    z-index: 1010;
+}
+
+.menu-toggle:checked ~ .menu-icon {
+    font-size: 1.8em;
+    transform: rotate(45deg);
+}
+
+.menu-toggle:checked ~ .menu-icon::before {
+    content: '×';
+}
+
+.menu-icon::before {
+    content: '☰';
+}
+
+/* NAVIGATION - MOBILE */
+.nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--background-card);
+    border-top: 1px solid var(--primary-accent);
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.05);
+}
+
+.menu-toggle:checked ~ .nav {
+    display: flex;
+}
+
+.nav a {
+    color: var(--text-dark);
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+.nav a[href="index.html"] {
+    color: var(--primary-accent);
+}
+
+.nav a:last-child {
+    border-bottom: none;
+}
+
+/* NAVIGATION - DESKTOP */
+@media (min-width: 600px) {
+    .menu-icon,
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        border-top: none;
+        box-shadow: none;
+    }
+
+    .nav a {
+        margin-left: 20px;
+        padding: 8px 10px;
+        border-bottom: none;
+    }
+
+    .nav a:hover {
+        background-color: var(--background-body);
+        border-radius: 5px;
+    }
+}
+
+/* HERO SECTION */
+.hero-section {
+    background-image: url("img1.jpeg");
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 80px;
+    color: var(--text-light);
+    position: relative;
+    text-align: left;
+}
+
+.hero-overlay-content {
+    padding: 20px 0px 50px 30px;
+   
+    width: 65%;
+    box-sizing: border-box;
+}
+
+.hero-section h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.hero-section p {
+    font-size: 1.1em;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--primary-accent);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1em;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e65c3e;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background: #1a1a1a;
+    color: #ccc;
+    text-align: center;
+    padding: 10px 5% 20px;
+    height: 100px;
+    margin-top: 0;
+}
+
+.footer .logo img {
+   align-items: left;
+    filter: brightness(0) invert(1);}
+
+.footer p{
+  font-size: 0.5em;
+  margin-top: -2px;
+}
