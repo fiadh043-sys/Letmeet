@@ -385,10 +385,6 @@ body {
     margin-top: 0px;
 }
 
-.footer .logo img {
-    filter: brightness(0) invert(1);
-    align-items: left;
-}
 
 .footer p{
   font-size: 0.5rem;
